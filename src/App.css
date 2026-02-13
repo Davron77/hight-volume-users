@@ -1,0 +1,297 @@
+#root {
+  width: 100%;
+}
+
+.app {
+  width: 1200px;
+  margin-inline: auto;
+  padding: 1rem 1.5rem;
+  min-height: 100vh;
+}
+
+.app-header {
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.app-main {
+  min-height: 400px;
+}
+
+/* Toolbar */
+.table-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.toolbar-search {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: inherit;
+  font-size: 1rem;
+  min-width: 220px;
+}
+
+.toolbar-search:focus {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+.toolbar-filter {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.toolbar-sort {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sort-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.sort-btn.sort-active {
+  border-color: #646cff;
+  background: rgba(100, 108, 255, 0.15);
+}
+
+/* Table */
+.users-table-wrap {
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.users-table-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 80px 80px 80px;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #2a2a2a;
+  font-weight: 600;
+  border-bottom: 1px solid #444;
+}
+
+.users-table-scroll {
+  height: 70vh;
+  overflow: auto;
+}
+
+.users-table-inner {
+  position: relative;
+  width: 100%;
+}
+
+.users-table-row-wrap {
+  box-sizing: border-box;
+}
+
+.user-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 80px 80px 80px;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  box-sizing: border-box;
+}
+
+.user-row:hover {
+  background: #252525;
+}
+
+.user-row:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: -2px;
+}
+
+.user-cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* UI states */
+.ui-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1rem;
+  color: #888;
+}
+
+.ui-state-loading p,
+.ui-state-empty p,
+.ui-state-error p {
+  margin: 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #333;
+  border-top-color: #646cff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ui-state-error button {
+  margin-top: 0.5rem;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #444;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: #888;
+}
+
+.modal-close:hover {
+  color: inherit;
+}
+
+.modal-content form {
+  padding: 1.25rem;
+}
+
+.modal-error {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid #dc3545;
+  border-radius: 8px;
+  color: #f88;
+  font-size: 0.9rem;
+}
+
+.modal-field {
+  margin-bottom: 1rem;
+}
+
+.modal-field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.modal-field input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #242424;
+  color: inherit;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-field input:focus {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+@media (prefers-color-scheme: light) {
+  .toolbar-search,
+  .toolbar-filter,
+  .users-table-wrap,
+  .modal-content {
+    background: #f5f5f5;
+  }
+
+  .users-table-wrap,
+  .toolbar-search,
+  .toolbar-filter {
+    border-color: #ccc;
+  }
+
+  .users-table-header {
+    background: #e8e8e8;
+  }
+
+  .user-row {
+    border-bottom-color: #e0e0e0;
+  }
+
+  .user-row:hover {
+    background: #eee;
+  }
+
+  .modal-field input {
+    background: #fff;
+    border-color: #ccc;
+  }
+}
